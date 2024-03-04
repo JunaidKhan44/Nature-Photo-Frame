@@ -279,15 +279,6 @@ public class EditMenu extends Activity implements View.OnClickListener {
                 mHoverView.mirrorImage();
                 break;
 
-
-           /* case R.id.positionButton:
-                mHoverView.switchMode(HoverView.MOVING_MODE);
-                findViewById(R.id.magicWand_layout).setVisibility(View.GONE);
-                findViewById(R.id.eraser_layout).setVisibility(View.GONE);
-                resetMainButtonState();
-                positionButton.setSelected(true);
-                break;*/
-
             case R.id.erase_sub_button:
                 mHoverView.switchMode(HoverView.ERASE_MODE);
                 resetSubEraserButtonState();
