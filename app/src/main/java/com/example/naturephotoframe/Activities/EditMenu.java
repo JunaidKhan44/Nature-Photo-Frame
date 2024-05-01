@@ -145,7 +145,7 @@ public class EditMenu extends Activity implements View.OnClickListener {
         eraserMainButton.setSelected(false);
         magicWandMainButton.setSelected(false);
         mirrorButton.setSelected(false);
-//        positionButton.setSelected(false);
+
     }
 
     public void resetSubEraserButtonState() {
@@ -414,12 +414,7 @@ public class EditMenu extends Activity implements View.OnClickListener {
 
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-					/*mHoverView.setMagicThreshold(progress);
-					if(mHoverView.getMode() == mHoverView.MAGIC_MODE)
-						mHoverView.magicEraseBitmap();
-					else if(mHoverView.getMode() == mHoverView.MAGIC_MODE_RESTORE)
-						mHoverView.magicRestoreBitmap();
-					mHoverView.invalidateView();*/
+				
             }
         });
 
@@ -427,9 +422,6 @@ public class EditMenu extends Activity implements View.OnClickListener {
         magicRemoveButton.setOnClickListener(this);
         magicRestoreButton = (ImageView) findViewById(R.id.magic_restore_button);
         magicRestoreButton.setOnClickListener(this);
-
-        //nextButton = (Button) findViewById(R.id.nextButton);
-        //nextButton.setOnClickListener(this);
 
         undoButton = (ImageView) findViewById(R.id.undoButton);
         undoButton.setOnClickListener(this);
