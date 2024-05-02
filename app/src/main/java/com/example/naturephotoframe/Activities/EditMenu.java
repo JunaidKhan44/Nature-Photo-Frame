@@ -372,8 +372,7 @@ public class EditMenu extends Activity implements View.OnClickListener {
         magicWandMainButton.setOnClickListener(this);
         mirrorButton = findViewById(R.id.mirrorButton);
         mirrorButton.setOnClickListener(this);
-        //positionButton = (Button) findViewById(R.id.positionButton);
-//        positionButton.setOnClickListener(this);
+
 
         eraserSubButton = (ImageView) findViewById(R.id.erase_sub_button);
         eraserSubButton.setOnClickListener(this);
