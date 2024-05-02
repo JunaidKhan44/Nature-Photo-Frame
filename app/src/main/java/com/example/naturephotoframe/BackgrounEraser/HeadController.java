@@ -19,7 +19,7 @@ public class HeadController {
 
 
     private int mBoundaryType = 0;
-    //	public static final int RECT_ROI_BOUNDARY = 1;
+
     public static final int RECT_CENTER_BOUNDARY = 2;
 
     public static final int NONE_TOUCH_TYPE = 0;
@@ -191,8 +191,6 @@ public class HeadController {
         mCenterPT.x = (mROI.left + mROI.right) / 2;
         mCenterPT.y = (mROI.top + mROI.bottom) / 2;
 
-        // int absoluteMarginX = (int) ((mImageData.getPreviewWidth() -
-        // mROI.width())/2);
         mPreviewWidth = mImageData.getDrawCanvasRoi().width();// mImageData.getPreviewWidth();
         mPreviewHeight = mImageData.getDrawCanvasRoi().height();// mImageData.getPreviewHeight();
         calculateOriginal();
@@ -500,7 +498,7 @@ public class HeadController {
 
         mPrevX = x;
         mPrevY = y;
-//		calculateOriginal();
+
     }
 
 
@@ -545,8 +543,7 @@ public class HeadController {
 
     public void EndMoveObject() {
         if (mTouchType == RIGHT_TOP || mTouchType == MOVE) {
-            // if(mMoveRectThread != null)
-            // mMoveRectThread.threadStop();
+
             if (mBoundaryType == RECT_CENTER_BOUNDARY) {
                 PointF pt;
                 pt = getRotationPoint(mROI.left, mROI.top, mAngle, mCenterPT.x,
@@ -791,8 +788,8 @@ public class HeadController {
         mGreyPaint.setColorFilter(f);
 
         if (mImageData != null) {
-            mPreviewWidth = mImageData.getDrawCanvasRoi().width();// mImageData.getPreviewWidth();
-            mPreviewHeight = mImageData.getDrawCanvasRoi().height();// mImageData.getPreviewHeight();
+            mPreviewWidth = mImageData.getDrawCanvasRoi().width();
+            mPreviewHeight = mImageData.getDrawCanvasRoi().height();
         }
 
     }
