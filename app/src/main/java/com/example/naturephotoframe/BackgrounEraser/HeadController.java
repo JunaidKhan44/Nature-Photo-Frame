@@ -606,7 +606,6 @@ public class HeadController {
             }
         }
         mTouchType = 0;
-//		calculateOriginal();
     }
 
 
