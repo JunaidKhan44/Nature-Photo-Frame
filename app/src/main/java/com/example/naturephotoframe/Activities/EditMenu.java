@@ -45,7 +45,6 @@ public class EditMenu extends Activity implements View.OnClickListener {
     private String imagePath;
     private Intent intent;
     private ContentResolver mContentResolver;
-    //private Bitmap mBitmap;
 
     HoverView mHoverView;
     double mDensity;
