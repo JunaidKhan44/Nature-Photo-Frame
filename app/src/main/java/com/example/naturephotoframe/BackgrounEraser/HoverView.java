@@ -207,10 +207,7 @@ public class HoverView  extends View {
 
         newCanvas = new Canvas(clippedBitmap);
         newCanvas.save();
-        // Draws the mask photo.
         newCanvas.drawARGB(255, 255, 255, 255);
-//		newCanvas.drawBitmap(bm, 0, 0, mMaskPaint);
-
         magicTouchRange = w > h ? h/2:w/2;
 
         saveBitmapData = new int[w * h];
@@ -379,26 +376,6 @@ public class HoverView  extends View {
                 int rT = (saveBitmapData[yTouch * mWidth + xTouch] >> 16) & 0xff;
                 int gT = (saveBitmapData[yTouch * mWidth + xTouch] >> 8) & 0xff;
                 int bT = saveBitmapData[yTouch * mWidth + xTouch] & 0xff;
-
-				/*if(xTouch - magicTouchRange < 0) {
-					left = 0;
-				} else left = xTouch - magicTouchRange;
-
-				if(xTouch + magicTouchRange > mWidth) {
-					right = mWidth;
-				} else right = xTouch + magicTouchRange;
-
-				if(yTouch - magicTouchRange < 0) {
-					top = 0;
-				} else top = yTouch - magicTouchRange;
-
-				if(yTouch + magicTouchRange > mHeight) {
-					bottom = mHeight;
-				} else bottom = yTouch + magicTouchRange;
-				*/
-//				Log.d("tri.dung", "  x = " + touchPoint.x  + "  y = " + touchPoint.y + " bm width = " + bm.getWidth() + "  bm height = " + bm.getHeight()
-//									+ "  left = " + left +"  right = " + right +"  top = " + top +"  bottom = " + bottom + " saveBitmapData " + saveBitmapData.length);
-
                 left = 0;
                 right = mWidth;
                 top = 0;
@@ -452,29 +429,11 @@ public class HoverView  extends View {
             if(xTouch > mWidth || xTouch < 0 || yTouch > mHeight || yTouch < 0)
                 return clippedBitmap;
 
-//			int aT = (pix[yTouch * mWidth + xTouch] >> 24) & 0xff;
 
             if(true) {
                 int rT = (saveBitmapData[yTouch * mWidth + xTouch] >> 16) & 0xff;
                 int gT = (saveBitmapData[yTouch * mWidth + xTouch] >> 8) & 0xff;
                 int bT = saveBitmapData[yTouch * mWidth + xTouch] & 0xff;
-
-				/*if(xTouch - magicTouchRange < 0) {
-					left = 0;
-				} else left = xTouch - magicTouchRange;
-
-				if(xTouch + magicTouchRange > mWidth) {
-					right = mWidth;
-				} else right = xTouch + magicTouchRange;
-
-				if(yTouch - magicTouchRange < 0) {
-					top = 0;
-				} else top = yTouch - magicTouchRange;
-
-				if(yTouch + magicTouchRange > mHeight) {
-					bottom = mHeight;
-				} else bottom = yTouch + magicTouchRange;*/
-
                 left = 0;
                 right = mWidth;
                 top = 0;
@@ -589,13 +548,10 @@ public class HoverView  extends View {
         if(mode != MOVING_MODE) {
             float[] v = new float[9];
             matrix.getValues(v);
-            // translation
             float mScalingFactor = v[Matrix.MSCALE_X];
 
             RectF r = new RectF();
             matrix.mapRect(r);
-
-            // mScalingFactor shall contain the scale/zoom factor
             float scaledX = (x - r.left);
             float scaledY = (y - r.top);
 
@@ -641,9 +597,7 @@ public class HoverView  extends View {
                     invalidate();
                 } else if (touchMode == ZOOM && mode == MOVING_MODE)
                 {
-                    // pinch zooming
                     float newDist = spacing(event);
-//                    Log.d(TAG, "newDist=" + newDist);
                     if (newDist > 5f)
                     {
                         matrix.set(savedMatrix);
